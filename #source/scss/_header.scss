@@ -1,0 +1,279 @@
+.header {
+  height: 879px;
+  color: $header-text-main;
+  font-weight: bold;
+  background: url(../assets/images/backgrounds/techno-background.png) top
+      no-repeat,
+    $header-bg;
+  background-size: 100% auto;
+
+  @media (max-width: 1850px) {
+    background: url(../assets/images/backgrounds/techno-background.png) center;
+    background-size: cover;
+  }
+
+  @include desktop {
+    height: 750px;
+  }
+
+  @include phones_tablet {
+    height: auto;
+  }
+
+  @include phones {
+    background: url(../assets/images/backgrounds/techno-background.png) top
+        center no-repeat,
+      $header-bg;
+    background-size: auto 600px;
+  }
+
+  &__additional-styling {
+    height: inherit;
+    background: url(../assets/images/backgrounds/dotted-background.png) repeat,
+      linear-gradient(
+        0deg,
+        $header-bg 11%,
+        rgba(142, 161, 187, 0.5) 22%,
+        transparent 100%
+      ),
+      linear-gradient(0deg, transparent 70%, rgba(59, 81, 112, 0.7) 100%);
+
+    @include phones {
+      background: url(../assets/images/backgrounds/dotted-background.png) repeat,
+        linear-gradient(
+          0deg,
+          $header-bg 55%,
+          rgba(142, 161, 187, 0.5) 80%,
+          transparent 100%
+        ),
+        linear-gradient(0deg, transparent 70%, rgba(59, 81, 112, 0.7) 100%);
+    }
+  }
+
+  & .container {
+    height: inherit;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-bottom: 150px;
+
+    @include desktop {
+      padding-bottom: 60px;
+    }
+
+    @include large-phone_tablet {
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 50px;
+    }
+
+    @include small-phone {
+      flex-direction: column;
+      width: 87.5%;
+      padding: 130px 0 70px;
+    }
+  }
+}
+
+.main-info {
+  @include small-phone {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  &__main-news {
+    @include large-phone_tablet {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__title {
+    font-size: 50px;
+    max-width: 650px;
+    margin-bottom: 50px;
+    line-height: 110%;
+
+    @include large-phone_tablet {
+      text-align: center;
+    }
+
+    @include small-phone {
+      margin-bottom: 30px;
+      font-size: 28px;
+      padding-right: 15px;
+    }
+  }
+
+  &__button-more-info {
+    width: 353px;
+    height: 70px;
+    border: 1px solid $header-button-border;
+    background: $header-button-bg;
+    font-size: 24px;
+    font-family: inherit;
+    font-weight: bold;
+    color: $header-text-main;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: justify;
+    margin-bottom: 92px;
+    @extend %border-radius;
+    position: relative;
+
+    @include small-phone {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    &:hover {
+      background: $header-button-bg-hover;
+    }
+
+    &::after {
+      content: ' \2192';
+      font-size: 30px;
+      line-height: 25px;
+      position: absolute;
+      right: 30px;
+      @include small-phone {
+        line-height: 20px;
+        right: 20px;
+      }
+    }
+
+    @include large-phone_tablet {
+      margin-bottom: 70px;
+    }
+
+    @include small-phone {
+      width: 100%;
+      height: 60px;
+      font-size: 20px;
+      margin-bottom: 100px;
+    }
+  }
+
+  &__message {
+    max-width: 990px;
+    height: 206px;
+    padding: 50px 115px 0 65px;
+    background: $header-message-block-bg;
+    backdrop-filter: blur(20px);
+    @extend %border-radius;
+    position: relative;
+
+    @include desktop {
+      width: 75%;
+      padding: 40px 20px 0 40px;
+    }
+
+    @include large-phone_tablet {
+      padding: 40px 20px 0 40px;
+      margin-bottom: 30px;
+    }
+
+    @include small-phone {
+      height: 262px;
+      padding: 30px 20px 30px 30px;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      height: inherit;
+      width: 15px;
+      background: $header-message-stripe;
+      border-radius: 15px 0px 0px 15px;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__message-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+
+    @include small-phone {
+      font-size: 20px;
+      line-height: 120%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__message-text {
+    font-size: 20px;
+    line-height: 140%;
+
+    @include phones {
+      font-size: 16px;
+    }
+  }
+}
+
+.aside-actual {
+  width: 352px;
+
+  @include desktop {
+    width: 600px;
+  }
+
+  @include small-phone {
+    width: 100%;
+  }
+
+  &__item {
+    margin-top: 20px;
+    padding: 30px;
+    background: $header-actual-news-bg;
+    @extend %border-radius;
+    position: relative;
+
+    @include small-phone {
+      padding: 20px;
+      margin-top: 10px;
+    }
+  }
+
+  &__date {
+    font-size: 14px;
+    color: $header-text-dates;
+    margin-bottom: 36px;
+
+    @include small-phone {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__actual-mark {
+    position: absolute;
+    background: $header-actual-mark-bg;
+    border-radius: 5px;
+    width: 99px;
+    height: 28px;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    top: 10px;
+    right: 10px;
+
+    @include small-phone {
+      width: 87px;
+      height: 24px;
+      font-size: 12px;
+      line-height: 24px;
+    }
+  }
+
+  &__text {
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 120%;
+
+    @include small-phone {
+      font-size: 18px;
+      line-height: 120%;
+    }
+  }
+}

@@ -1,0 +1,132 @@
+.footer {
+  & .container {
+    padding-top: 100px;
+    padding-bottom: 68px;
+
+    @include desktop {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+    @include large-phone_tablet {
+      padding: 50px;
+    }
+
+    @include small_phone {
+      padding-top: 70px;
+      padding-bottom: 30px;
+    }
+  }
+
+  &__info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include phones {
+      height: 150px;
+      flex-direction: column-reverse;
+      justify-content: space-between;
+    }
+  }
+
+  &__rights {
+    font-size: 14px;
+    color: $footer-text-copyright;
+
+    @include phones_tablet {
+      display: flex;
+      flex-direction: column;
+    }
+    @include phones {
+      align-items: center;
+    }
+
+    @include small_phone {
+      font-size: 12px;
+    }
+  }
+
+  &__copyright {
+    margin-right: 30px;
+
+    @include phones_tablet {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__created-by {
+    & .creator {
+      text-decoration: underline;
+      color: inherit;
+
+      &:hover {
+        color: $footer-text-creator-hover;
+      }
+    }
+  }
+
+  &__partners {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include small_phone {
+      transform: scale(0.8);
+    }
+  }
+}
+
+.contacts {
+  padding-bottom: 55px;
+  border-bottom: 1px solid $footer-contacts-border;
+
+  @include small_phone {
+    padding-bottom: 70px;
+  }
+
+  &__title {
+    font-weight: bold;
+    font-size: 24px;
+    color: $footer-text-title;
+    margin-bottom: 50px;
+    @include small_phone {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    @include phones {
+      height: 80px;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    margin-right: 50px;
+    display: flex;
+    align-items: center;
+
+    & img {
+      width: 30px;
+      margin-right: 10px;
+    }
+  }
+
+  &__phone,
+  &__mail {
+    color: $footer-text-contacts;
+    font-size: 20px;
+    text-decoration: none;
+
+    &:hover {
+      color: $footer-text-contacts-hover;
+    }
+
+    @include small_phone {
+      font-size: 18px;
+    }
+  }
+}

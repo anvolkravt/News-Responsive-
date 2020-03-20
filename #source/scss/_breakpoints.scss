@@ -1,0 +1,7 @@
+$desctop-max: 1550px;
+$desctop_min: 1024px;
+$tablet-max: $desctop_min - 1;
+$tablet-min: 768px;
+$large-phone-max: $tablet-min - 1;
+$large-phone-min: 480px;
+$small_phone-max: $large-phone-min - 1;
